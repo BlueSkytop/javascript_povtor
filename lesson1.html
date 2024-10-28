@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 1</title>
+</head>
+<body>
+<h1></h1>
+<h4></h4>
+<ol class="menu"></ol>
+<ul class="menu2"></ul>
+<script>
+    // querySelector - витягує з body//
+    let h1 = document.querySelector('h1');
+    h1.innerText = 'hello';
+    let h4 = document.querySelector('h4');
+    h4.innerText = 'goodbye';
+     // createElement - створює в body//
+    let msg = 'lorem ipsum';
+    let p = document.createElement('p');
+    p.innerText = msg;
+    document.body.append(p);
+
+    let h3 = document.createElement('h3');
+    h3.innerText = 'i meow you';
+
+
+    //-------------------робота зі списками----------------//
+    let users = [
+        {name:'Vasja', age:25, status:false},
+        {name:'Olja', age:27, status:true},
+        {name:'Katja', age:15, status:true},
+        {name:'Ira', age:32, status:false},
+        {name:'Oleg', age:40, status:true},
+        {name:'Ihor', age:92, status:false},
+        {name:'Stepan', age:75, status:true},
+        {name:'Ljuba', age:35, status:false},
+    ];
+    let menu = document.querySelector('.menu');
+
+    for (const user of users) {
+        let li = document.createElement('li');
+        li.innerText = user.name;
+        menu.append(li);
+    }
+
+    //---------------робота зі списком зі стороннього сайту--------------//
+    let menu2 = document.querySelector('.menu2');
+    fetch('https://jsonplaceholder.typicode.com/users')
+          .then(value => value.json())
+          .then(users => {
+              for (const user of users) {
+                  let li = document.createElement('li');
+                  li.innerText = user.name;
+                  menu2.append(li);
+              }
+          });
+
+    //-------------доступ до місцярозсташування-------------//
+    navigator.geolocation.getCurrentPosition(position => console.log(position));
+</script>
+</body>
+</html>
