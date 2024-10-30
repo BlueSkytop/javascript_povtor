@@ -93,4 +93,3 @@ let devs = [
 console.log(devs);
 console.log(devs[1].skills[0]);
 console.log(devs[1].skills[0]);
-console.log(devs.length);
