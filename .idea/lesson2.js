@@ -44,6 +44,9 @@ let dog = {
 console.log(dog);
 console.log(dog.age);
 
+// ств-ня обєкту з даними html //
+document.write('<h2>Finance</h2>');
+
 // масив //
 let dogMas = [
     {id:1, name:'chery', age:3},
@@ -93,3 +96,54 @@ let devs = [
 console.log(devs);
 console.log(devs[1].skills[0]);
 console.log(devs[1].skills[0]);
+
+// перевизначеня значення в обєкті //
+let obj = {};
+console.log(obj);
+obj.name = 'ira';
+obj.tema = 'Будинок для їжачка';
+console.log(obj);
+
+// бінарні оператори &&-and(строгий оператор); ||-or(нестрогий)  //
+console.log(true && true);
+console.log(true && false);
+console.log(false && false);
+console.log(false || false);
+console.log(true || false);
+console.log(true && true);
+console.log(true && false || false);
+
+// логічні розгалуження //
+// Задача. Потрібно у людини спитати її вік, і якщо він менше ніж 18 вивести повідомленя 'Hello young user', //
+    // а якщо більше 18 то 'Hello user' //
+let age = 25; //або let user = +prompt(); //
+if (age < 18) {    // можна додавати бінарні оператори//
+    document.write('<h3>Hello young user</h3>');
+} else {
+    document.write('<h3>Hello user</h3>');
+}
+
+//множинні перевірки з використанням бінарних операторів //
+let user = {name:'iris', age:12, status:'married'}; // 0-18('hello young user'); 19-60('hello user'); 61-99('hello old user') //
+if (user.age > 0 && user.age <= 18) {
+    document.write('<h4>Hello young user</h4>')
+     if (user.name=='iris') {
+         document.write('<h4>Hello Iris</h4>')
+     } else {'You are not Iris'}
+} else if (user.age >18 && user.age <=60) {
+    document.write('<h4>Hello user</h4>')
+} else if (user.age > 60 && user.age <=99) {
+    document.write('<h4>Hello old user</h4>')
+} else {
+    document.write('<h2>Who are you?</h2>')
+};
+
+// перевірка через switch //
+let user2 = {name:'Kolja',age:80, status: 'married'};
+switch (user2.status) {
+    case 'married':
+        console.log('True');
+        break;
+    default:
+        console.log('False');
+}
